@@ -1,0 +1,23 @@
+## Why Accuracy Is Misleading for Fraud Detection
+
+Accuracy is not an appropriate primary metric for this fraud detection problem because the
+dataset is extremely imbalanced.
+
+Approximately 99.83% of the transactions are legitimate, while only about 0.17% are
+fraudulent.
+
+For example, a model that predicts every transaction as legitimate would achieve approximately
+99.83% accuracy. However, that model would detect 0% of fraudulent transactions.
+
+Therefore, high accuracy does not necessarily mean that the model is useful for fraud detection.
+
+Instead, we should focus on metrics such as:
+
+- Precision: How many transactions predicted as fraud are actually fraudulent?
+- Recall: How many actual fraudulent transactions were successfully detected?
+- F1-score: Harmonic mean of precision and recall.
+- ROC-AUC: Measures how well the model separates fraudulent and legitimate transactions
+  across different classification thresholds.
+
+For fraud detection, recall is particularly important because missing a fraudulent transaction
+(a false negative) can result in financial loss.
