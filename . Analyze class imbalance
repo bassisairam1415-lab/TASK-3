@@ -1,0 +1,29 @@
+print(df["Class"].value_counts())
+class_counts = df["Class"].value_counts()
+fraud_percentage = (class_counts[1] / len(df)) * 100
+non_fraud_percentage = (class_counts[0] / len(df)) * 100
+print(f"Non-fraudulent transactions: {class_counts[0]}")
+print(f"Fraudulent transactions: {class_counts[1]}")
+print(f"Fraud percentage: {fraud_percentage:.4f}%")
+print(f"Non-fraud percentage: {non_fraud_percentage:.4f}%")
+Non-fraudulent transactions: 284315
+Fraudulent transactions: 492
+Fraud percentage: 0.1727%
+Non-fraud percentage: 99.8273%
+plt.figure(figsize=(7, 5))
+sns.countplot(x="Class", data=df)
+plt.title("Distribution of Fraudulent vs Non-Fraudulent Transactions")
+plt.xlabel("Transaction Class")
+plt.ylabel("Number of Transactions")
+plt.show()
+plt.figure(figsize=(6, 6))
+
+plt.pie(
+    class_counts,
+    labels=["Non-Fraud", "Fraud"],
+    autopct="%1.2f%%"
+)
+
+plt.title("Class Distribution")
+
+plt.show()
