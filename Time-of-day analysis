@@ -1,0 +1,29 @@
+df["Hour"] = (df["Time"] // 3600) % 24
+hourly_transactions = df.groupby(["Hour", "Class"]).size().reset_index(name="Count")
+
+plt.figure(figsize=(12, 6))
+
+sns.lineplot(
+    data=hourly_transactions,
+    x="Hour",
+    y="Count",
+    hue="Class",
+    marker="o"
+)
+
+plt.title("Transactions by Hour of Day")
+plt.xlabel("Hour")
+plt.ylabel("Number of Transactions")
+
+plt.show()
+hourly_fraud_rate = df.groupby("Hour")["Class"].mean() * 100
+
+plt.figure(figsize=(12, 5))
+
+hourly_fraud_rate.plot(kind="bar")
+
+plt.title("Fraud Percentage by Hour")
+plt.xlabel("Hour")
+plt.ylabel("Fraud Percentage (%)")
+
+plt.show()
