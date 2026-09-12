@@ -1,0 +1,31 @@
+## Which Metric Matters Most for Fraud Detection?
+
+Recall is often the most important metric in fraud detection because it measures the proportion
+of actual fraudulent transactions that the model successfully identifies.
+
+A false negative occurs when a fraudulent transaction is classified as legitimate.
+
+For a financial institution, missing fraud can result in significant financial losses and
+customer impact. Therefore, increasing recall can be highly valuable.
+
+However, maximizing recall alone is not sufficient.
+
+If the model labels almost every transaction as fraudulent, recall may become very high, but
+the number of false alarms will also become extremely high.
+
+This reduces precision.
+
+Precision is therefore also important because it measures the proportion of transactions
+flagged as fraud that are actually fraudulent.
+
+There is a trade-off:
+
+- Higher Recall → Catch more fraud, but potentially generate more false alerts.
+- Higher Precision → Reduce false alerts, but potentially miss more fraud.
+
+The appropriate balance depends on the business cost of false positives versus false
+negatives.
+
+For an initial fraud-screening system, recall would generally receive strong emphasis, while
+precision should remain high enough that the fraud investigation team is not overwhelmed by
+false alerts.
