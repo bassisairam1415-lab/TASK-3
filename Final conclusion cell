@@ -1,0 +1,35 @@
+# Conclusion
+
+This project developed a machine-learning pipeline for detecting fraudulent financial
+transactions in a highly imbalanced dataset.
+
+The dataset contains approximately 284,807 transactions, of which only 492 are fraudulent,
+meaning that fraud represents approximately 0.17% of all transactions.
+
+Because of this severe class imbalance, accuracy was not used as the primary evaluation
+metric. Instead, Precision, Recall, F1-score, and ROC-AUC were used.
+
+SMOTE was applied to the training data to address class imbalance while preserving the original
+test distribution.
+
+Two machine-learning models were evaluated:
+
+1. Logistic Regression
+2. Random Forest
+
+The models were compared using fraud-focused performance metrics.
+
+Recall is particularly important because false negatives represent fraudulent transactions
+that the system fails to detect. However, precision must also be considered because excessive
+false positives can create unnecessary investigations and inconvenience legitimate customers.
+
+Feature importance and Logistic Regression coefficients were examined to understand which
+features contributed most strongly to predictions.
+
+For production deployment at approximately one million transactions per hour, the model
+would need a scalable inference architecture involving streaming or batch processing,
+efficient feature engineering, model serving, monitoring, and periodic retraining.
+
+Overall, fraud detection requires balancing statistical performance with business costs,
+especially the trade-off between detecting more fraudulent transactions and generating
+manageable numbers of false alerts.
