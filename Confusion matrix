@@ -1,0 +1,16 @@
+cm_lr = confusion_matrix(y_test, y_pred_lr)
+
+plt.figure(figsize=(6, 5))
+
+sns.heatmap(
+    cm_lr,
+    annot=True,
+    fmt="d",
+    cmap="Blues"
+)
+
+plt.title("Logistic Regression Confusion Matrix")
+plt.xlabel("Predicted")
+plt.ylabel("Actual")
+
+plt.show()
