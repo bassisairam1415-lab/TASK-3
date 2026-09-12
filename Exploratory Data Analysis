@@ -1,0 +1,33 @@
+plt.figure(figsize=(10, 6))
+
+sns.histplot(
+    data=df,
+    x="Amount",
+    hue="Class",
+    bins=50,
+    kde=True,
+    element="step"
+)
+
+plt.title("Transaction Amount Distribution")
+plt.xlabel("Transaction Amount")
+plt.ylabel("Frequency")
+
+plt.show()
+plt.figure(figsize=(10, 6))
+
+sns.histplot(
+    data=df,
+    x=np.log1p(df["Amount"]),
+    hue=df["Class"],
+    bins=50,
+    kde=True,
+    element="step"
+)
+
+plt.title("Log-Scaled Transaction Amount Distribution")
+plt.xlabel("log(Amount + 1)")
+plt.ylabel("Frequency")
+
+plt.show()
+print(df.groupby("Class")["Amount"].describe())
