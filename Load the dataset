@@ -1,0 +1,6 @@
+df = pd.read_csv("creditcard.csv")
+df.head()
+print("Dataset shape:", df.shape)
+print("\nColumns:")
+print(df.columns.tolist())
+(284807, 31)
