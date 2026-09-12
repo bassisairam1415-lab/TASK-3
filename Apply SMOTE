@@ -1,0 +1,11 @@
+smote = SMOTE(random_state=42)
+
+X_train_smote, y_train_smote = smote.fit_resample(
+    X_train_scaled,
+    y_train
+)
+print("Before SMOTE:")
+print(y_train.value_counts())
+
+print("\nAfter SMOTE:")
+print(pd.Series(y_train_smote).value_counts())
