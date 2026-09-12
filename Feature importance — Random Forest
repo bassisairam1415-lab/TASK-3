@@ -1,0 +1,22 @@
+feature_importance = pd.DataFrame({
+    "Feature": X.columns,
+    "Importance": rf_model.feature_importances_
+})
+
+feature_importance = feature_importance.sort_values(
+    by="Importance",
+    ascending=False
+)
+
+feature_importance.head(15)
+plt.figure(figsize=(10, 7))
+
+sns.barplot(
+    data=feature_importance.head(15),
+    x="Importance",
+    y="Feature"
+)
+
+plt.title("Top 15 Random Forest Feature Importances")
+
+plt.show()
