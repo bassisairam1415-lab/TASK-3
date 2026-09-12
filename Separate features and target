@@ -1,0 +1,3 @@
+X = df.drop("Class", axis=1)
+y = df["Class"]
+X = X.drop("Hour", axis=1)
